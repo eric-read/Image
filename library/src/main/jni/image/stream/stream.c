@@ -39,6 +39,12 @@ void* stream_read_all(Stream* stream, size_t* size) {
     len += read;
     // Check stream end
     if (len < limit) {
+      // Check if stream read any data
+      if (len == 0) {
+        LOGW("Didn't read anything from stream, is it open?");
+        free(buffer);
+        return NULL;
+      }
       // Get the end, shrink the buffer
       buffer_bak = buffer;
       buffer = realloc(buffer, len);
