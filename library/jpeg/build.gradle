@@ -10,7 +10,7 @@ android {
             manifest.srcFile 'AndroidManifest.xml'
         }
     }
-    
+
     packagingOptions {
         // Do not include libimage.so in the codec aar
         exclude '**/libimage.so'
@@ -25,8 +25,7 @@ android {
         externalNativeBuild {
             cmake {
                 targets "image-jpeg"
-                arguments "-DANDROID_ARM_NEON=TRUE",
-                          "-DIMAGE_SINGLE_SHARED_LIB=FALSE"
+                arguments "-DIMAGE_SINGLE_SHARED_LIB=FALSE"
             }
         }
     }
