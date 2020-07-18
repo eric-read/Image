@@ -8,3 +8,4 @@ build
 /projectFilesBackup
 .externalNativeBuild
 javah
+.cxx/
